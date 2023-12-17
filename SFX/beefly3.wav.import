@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/beefly3.wav-c8bb5958dffc1e2db79d1dbddec80d9a.sample"
+
+[deps]
+
+source_file="res://SFX/beefly3.wav"
+dest_files=[ "res://.import/beefly3.wav-c8bb5958dffc1e2db79d1dbddec80d9a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

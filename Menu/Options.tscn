@@ -1,0 +1,91 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Menu/Options.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/GloriaHallelujah-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Menu/closeButton.png" type="Texture" id=3]
+[ext_resource path="res://Menu/kisspng-paper-notebook-line-5b32b3c69a4556.6253404815300494786319.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+outline_size = 2
+outline_color = Color( 0.341176, 0.341176, 0.341176, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[node name="Options" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 276.0
+margin_top = 39.0
+margin_right = 1016.0
+margin_bottom = 611.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 349.0
+margin_top = 118.0
+margin_right = 955.0
+margin_bottom = 399.0
+
+[node name="CloseOptionsButton" type="Button" parent="VBoxContainer"]
+margin_left = 530.0
+margin_right = 606.0
+margin_bottom = 71.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 10
+size_flags_vertical = 0
+icon = ExtResource( 3 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Music" type="Label" parent="VBoxContainer"]
+margin_top = 75.0
+margin_right = 606.0
+margin_bottom = 108.0
+custom_fonts/font = SubResource( 1 )
+text = "Música"
+
+[node name="MusicVolumeBar" type="HSlider" parent="VBoxContainer"]
+margin_top = 112.0
+margin_right = 606.0
+margin_bottom = 128.0
+max_value = 1.0
+step = 0.05
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SFX" type="Label" parent="VBoxContainer"]
+margin_top = 132.0
+margin_right = 606.0
+margin_bottom = 165.0
+custom_fonts/font = SubResource( 1 )
+text = "SFX"
+
+[node name="SFXVolumeBar" type="HSlider" parent="VBoxContainer"]
+margin_top = 169.0
+margin_right = 606.0
+margin_bottom = 185.0
+max_value = 1.0
+step = 0.05
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="VBoxContainer/CloseOptionsButton" to="." method="_on_CloseOptionsButton_pressed"]
+[connection signal="value_changed" from="VBoxContainer/MusicVolumeBar" to="." method="_on_MusicVolumeBar_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/SFXVolumeBar" to="." method="_on_SFXVolumeBar_value_changed"]

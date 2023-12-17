@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Level/Spawners.gd" type="Script" id=2]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -70, -51, 0, 0, 0, 0, 1337, -57, 0, 0, 0, 0, 1335, 792, 0, 0, 0, 0, -64, 791, 0, 0, 0, 0, -70, -51 )
+}
+
+[node name="Spawners" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="SpawnTime" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="SpawnerPath" type="Path2D" parent="."]
+curve = SubResource( 1 )
+
+[node name="SpawnerPoint" type="PathFollow2D" parent="SpawnerPath"]
+position = Vector2( -70, -51 )
+rotation = -0.00426369
